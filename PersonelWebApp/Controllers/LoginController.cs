@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PersonelWebApp.Models;
 
 namespace PersonelWebApp.Controllers
 {
@@ -8,5 +9,20 @@ namespace PersonelWebApp.Controllers
         {
             return PartialView();
         }
+
+        [HttpPost]
+        public IActionResult Login(Login login)
+        {
+            if(login.Email=="admin@sdfj.com" && login.Pass== "123")
+            { 
+                return RedirectToAction("Index", "Home");
+            }
+            else 
+            { 
+                return RedirectToAction("Index", "Login");
+            }
+          
+        }
+
     }
 }

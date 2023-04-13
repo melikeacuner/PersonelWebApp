@@ -1,4 +1,6 @@
-﻿<head>
+﻿@model PersonelWebApp.Models.User
+
+<head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" />
@@ -99,7 +101,7 @@
         color: #e5e5e5;
     }
 
-    button {
+    #button {
         margin-top: 50px;
         margin-bottom: 20px;
         width: 100%;
@@ -111,6 +113,7 @@
         border-radius: 50px;
         cursor: pointer;
     }
+
 </style>
 
 <body>
@@ -118,16 +121,17 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
-        <h3>Welcome Back</h3>
+    <form action="/Login/Login" metod="post">
+        <h3>Welcome Back </h3>
+
 
         <label for="username">E-mail</label>
-        <input type="email" placeholder="Email" id="E-mail">
+        <input name="Email" type="email" placeholder="Email" id="E-mail">
 
         <label for="password">Password</label>
 
         <div style="position: relative;">
-            <input type="password" placeholder="Password" id="password"> <i style=" position: absolute; top: 0; right: 0; margin-top: 10px;" class="circular eye link icon"
+            <input name="Pass" type="password" placeholder="Password" id="password"> <i style=" position: absolute; top: 0; right: 0; margin-top: 10px;" class="circular eye link icon"
                                                                             onclick="togglePassword()"></i>
         </div>
 
@@ -135,7 +139,7 @@
             <p onclick="return alert('Girilen mail adresi kayıtlarda bulunuyor ise şifreniz mail adresinize gönderilecektir!')" style="color:#90a9be; font-size: small; float:right ;">Forgot my password</p>
         </a>
 
-        <button>Log In</button>
+        <input type="submit" id="button" value="Log In">
     </form>
 
 </body>
