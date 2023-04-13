@@ -12,8 +12,27 @@ namespace PersonelWebApp.Controllers
         {
             _logger = logger;
         }
+        public IActionResult LoginPage()
+        {
+            return PartialView();
+        }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Profilim()
+        {
+            return View();
+        }
+
+        public IActionResult Izinler()
+        {
+            return View();
+        }
+
+        public IActionResult Maas()
         {
             return View();
         }
@@ -22,6 +41,23 @@ namespace PersonelWebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Duyurular()
+        {
+            return View();
+        }
+
+        public IActionResult Aktiviteler()
+        {
+            return View();
+        }
+
+        public IActionResult Calisanlar()
+        {
+            return View();
+        }
+
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
