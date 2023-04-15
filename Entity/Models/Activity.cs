@@ -8,9 +8,9 @@ namespace Entity.Models
 {
     public class Activity : BaseEntity
     {
-        public string title { get; set; }
+        public string Title { get; set; }
         public string Contents { get; set; }
-        public string Editor { get; set; }
+        public Employee Employee { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
     }

@@ -11,7 +11,7 @@ namespace Entity.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Explanation { get; set; }
-        public string Editor { get; set; }
+        public Employee Employee{ get; set; }
         public string ApprovalStatus { get; set; }
     }
 }

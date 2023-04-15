@@ -8,9 +8,9 @@ namespace Entity.Models
 {
     public class Notification : BaseEntity
     {
-        public string title { get; set; }
+        public string Title { get; set; }
         public string Contents { get; set; }
-        public string Editor { get; set; }
-        public DateTime PublishedDate { get; set; }
+        public Employee Employee { get; set; }
+        public DateTime PublishDate { get; set; }
     }
 }
