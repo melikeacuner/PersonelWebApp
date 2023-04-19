@@ -1,6 +1,11 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using BLL.Services.Abstract;
+using BLL.Services.Concrete;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<ILoginService,LoginService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -1,1 +1,71 @@
-﻿<h1>PROFİLİM SAYFASI</h1>
+﻿.<style>
+     .information input {
+         width: 100%;
+         border: #d1d1d1 1px dotted;
+     }
+
+     .information p {
+         font-size: large;
+         font-family: garamond;
+     }
+
+     .information {
+         margin-top: -50px;
+     }
+
+     .updatebutton {
+         float: right;
+         background-color: #fdfaf9ef;
+         color: #0047a4fb;
+         font-size: 1.3em;
+         font-weight: 400;
+         position: relative;
+         outline: none;
+         border-radius: 50px;
+         border: 1px solid #E08955;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 40px;
+         width: 120px;
+         margin-right: 40px;
+     }
+
+         .updatebutton:hover {
+             background-color: #e6f3fffd;
+             color: #E08955;
+         }
+     </style>
+
+<div class="information">
+    <div class="row" style="margin: 15px;">
+        <div class="col-sm-6"><p>Name : <input type="text" placeholder="Name" id="name"></p></div>
+        <div class="col-sm-6"><p>Surname : <input type="text" placeholder="Surname" id="Surname"></p></div>
+    </div>
+
+
+    <div class="row" style="margin: 15px;">
+        <div class="col-sm-6"><p>Birthdate : <input type="date"></p></div>
+        <div class="col-sm-6"><p>StartDate :  <input type="date"> </p></div>
+    </div>
+
+
+    <div class="row" style="margin: 15px;">
+        <div class="col-sm-6"><p>Email : <input type="text" placeholder="email" id="Email"></p></div>
+        <div class="col-sm-6"><p>Password : <input type="text" id="pass"></p></div>
+    </div>
+
+
+    <div class="row" style="margin: 15px;">
+        <div class="col-sm-6"><p>PhoeneNumber : <input type="text" placeholder="PhoeneNumber" id="PhoeneNumber"></p></div>
+        <div class="col-sm-6"><p>Adress : <input type="text" placeholder="adress" id="adress"></p></div>
+    </div>
+
+
+    <div class="row" style="margin: 15px;">
+        <div class="col-sm-6"><p>Departman : <input type="text" placeholder="Departman" id="departman"></p></div>
+        <div class="col-sm-6"><p>Title : <input type="text" placeholder="title" id="title"></p></div>
+    </div>
+
+    <button class="updatebutton">Update</button>
+</div>

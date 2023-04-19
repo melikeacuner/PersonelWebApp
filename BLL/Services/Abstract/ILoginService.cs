@@ -1,4 +1,5 @@
-﻿using Entity.PModels;
+﻿using Entity.Models;
+using Entity.PModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace BLL.Services.Abstract
 {
     public interface ILoginService
     {
-        public bool Login(Login login);
+        public Employee? Login(Login login);
     }
 }

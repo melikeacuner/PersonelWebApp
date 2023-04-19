@@ -140,12 +140,6 @@
 }
 
 .main {
-    border: #c5c5c5eb solid 1px;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #000000;
-    background-color: #fffefe;
-    border-radius: 30px;
-    box-shadow: 1.6px 0.5px 2.2px -7px rgba(0, 0, 0, 0.019), 3.9px 1.1px 5.4px -7px rgba(0, 0, 0, 0.03), 7.3px 2.1px 10.1px -7px rgba(0, 0, 0, 0.038), 13px 3.8px 18.1px -7px rgba(0, 0, 0, 0.043), 24.2px 7.1px 33.8px -7px rgba(0, 0, 0, 0.051), 58px 17px 81px -7px rgba(0, 0, 0, 0.07);
 }
-

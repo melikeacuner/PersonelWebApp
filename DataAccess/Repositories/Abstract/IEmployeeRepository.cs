@@ -9,5 +9,6 @@ namespace DataAccess.Repositories.Abstract
 {
     public interface IEmployeeRepository : IGenericRepository<Employee>
     {
+        public Employee? GetEmployeeByEmail(string Email);
     }
 }

@@ -16,5 +16,10 @@ namespace DataAccess.Repositories.Concrete
         {
         }
         public PersonelDbContext PersonelContext { get { return (PersonelDbContext)dbContext; } }
+
+        public Employee? GetEmployeeByEmail(string Email)
+        {
+           return PersonelContext.Employees.FirstOrDefault(p=>p.Email.Equals(Email));
+        }
     }
 }

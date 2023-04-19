@@ -1,5 +1,7 @@
-﻿using Common.Auth;
+﻿using BLL.Services.Abstract;
+using Common.Auth;
 using Entity.Models;
+using Entity.PModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +11,13 @@ namespace PersonelWebApp.Controllers
 {
     [Authorize]
     public class LoginController : Controller
-    {
+    { 
+        private ILoginService _loginService { get; set; }
+        public LoginController(ILoginService loginService)
+        {
+           _loginService = loginService ;
+        }
+
         [AllowAnonymous]
         public IActionResult Index()
         {
@@ -30,19 +38,20 @@ namespace PersonelWebApp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(Login login)
         {
-            var DbUser = new Employee() { };
-            var user = new AuthModel()
-            {
-                Id = DbUser.Id,
-                Name = DbUser.Name + " " + DbUser.Surname,
-                NameIdentifier = DbUser.Email,
-                Role = DbUser.Role,
 
-            };
+            var user = _loginService.Login(login); 
+          
 
-            if(login.Email== "melike@com.tr" && login.Pass== "123")
+            if(user is not null)
             { 
-                var ClaimsPrincipal = AuthHelper.GetClaimsPrincipal(user);
+                var ClaimsPrincipal = AuthHelper.GetClaimsPrincipal(
+                    new AuthModel()
+                    {
+                        Id = user.Id,
+                        Name = user.Name,
+                        NameIdentifier = user.Email,
+                        Role = user.Role
+                    });
                 await HttpContext.SignInAsync(ClaimsPrincipal);
                 return RedirectToAction("Index", "Home");
             }
