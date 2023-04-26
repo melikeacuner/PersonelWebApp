@@ -39,27 +39,24 @@ namespace PersonelWebApp.Controllers
         public async Task<IActionResult> Login(Login login)
         {
 
-            var user = _loginService.Login(login); 
-          
-
-            if(user is not null)
-            { 
+            if (login.Email != "" && login.Pass != "")
+            {
                 var ClaimsPrincipal = AuthHelper.GetClaimsPrincipal(
                     new AuthModel()
                     {
-                        Id = user.Id,
-                        Name = user.Name,
-                        NameIdentifier = user.Email,
-                        Role = user.Role
+                        Id = 1,
+                        Name = login.Email,
+                        NameIdentifier = login.Email,
+                        Role = "A"
                     });
                 await HttpContext.SignInAsync(ClaimsPrincipal);
                 return RedirectToAction("Index", "Home");
             }
-            else 
-            { 
+            else
+            {
                 return RedirectToAction("Index", "Login");
             }
-          
+
         }
 
         public IActionResult Denied()

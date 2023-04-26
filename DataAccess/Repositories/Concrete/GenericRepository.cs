@@ -131,7 +131,7 @@ namespace DataAccess.Repositories.Concrete
 
         public async Task<TEntity> GetByExpressionAsync(Expression<Func<TEntity, bool>> expression)
         {
-            return await entity.FirstOrDefaultAsync(expression);
+            return await entity.FirstAsync(expression);
         }
 
         public async Task<List<TEntity>> GetListByExpressionAsync(Expression<Func<TEntity, bool>> expression)
@@ -141,7 +141,7 @@ namespace DataAccess.Repositories.Concrete
 
         public TEntity GetByExpression(Expression<Func<TEntity, bool>> expression)
         {
-            return entity.FirstOrDefault(expression);
+            return entity.First(expression);
         }
 
         public List<TEntity> GetListByExpression(Expression<Func<TEntity, bool>> expression)
